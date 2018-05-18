@@ -7,6 +7,8 @@ fastman 是一个restful api 测试的辅助库，可以快速建立api测试，
 
 测试的runner使用 newman
 
+## Current Version: 0.0.3
+
 ## Use
 
 ### Install
