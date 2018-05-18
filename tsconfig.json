@@ -1,0 +1,26 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "outDir": "./dist",
+    "declaration": true,
+    "stripInternal": true,
+    "moduleResolution": "node",
+    "module": "CommonJS",
+    "allowSyntheticDefaultImports": true,
+    "experimentalDecorators": true,
+    "sourceMap": true,
+    "checkJs": false,
+    "lib": [
+      "es2015"
+    ]
+  },
+  "files": [
+    "index.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist",
+    "example",
+    "src/**/*.test.ts"
+  ]
+}

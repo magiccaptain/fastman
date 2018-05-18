@@ -1,0 +1,735 @@
+{
+  "info": {
+    "name": "FastmanAutoGen",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Users",
+      "item": [
+        {
+          "name": "ListUserOK",
+          "request": {
+            "url": {
+              "raw": "http://{{host}}:{{port}}/api/users?offset=0&limit=10",
+              "protocol": "http",
+              "port": "{{port}}",
+              "host": [
+                "{{host}}"
+              ],
+              "path": [
+                "api",
+                "users"
+              ],
+              "query": [
+                {
+                  "key": "offset",
+                  "value": 0
+                },
+                {
+                  "key": "limit",
+                  "value": 10
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{bearer_token}}"
+              }
+            ],
+            "body": {},
+            "method": "get"
+          },
+          "response": [
+            {
+              "name": "ListUserOK",
+              "originalRequest": {
+                "url": {
+                  "raw": "http://{{host}}:{{port}}/api/users?offset=0&limit=10",
+                  "protocol": "http",
+                  "port": "{{port}}",
+                  "host": [
+                    "{{host}}"
+                  ],
+                  "path": [
+                    "api",
+                    "users"
+                  ],
+                  "query": [
+                    {
+                      "key": "offset",
+                      "value": 0
+                    },
+                    {
+                      "key": "limit",
+                      "value": 10
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer {{bearer_token}}"
+                  }
+                ],
+                "body": {},
+                "method": "get"
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "X-Total",
+                  "value": "101"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "512"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"200-PdLumLCwzjFkuwZpaCtISU9M1dM\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Fri, 18 May 2018 14:39:17 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "cookies": [],
+              "body": "[\n\t{\n\t\t\"id\": \"340000199806176355\",\n\t\t\"name\": \"Brian Rodriguez\"\n\t},\n\t{\n\t\t\"id\": \"610000200908238415\",\n\t\t\"name\": \"Margaret Clark\"\n\t},\n\t{\n\t\t\"id\": \"140000197109234971\",\n\t\t\"name\": \"Jeffrey Walker\"\n\t},\n\t{\n\t\t\"id\": \"520000199010315333\",\n\t\t\"name\": \"Jessica Clark\"\n\t},\n\t{\n\t\t\"id\": \"220000197805212987\",\n\t\t\"name\": \"Jessica Jackson\"\n\t},\n\t{\n\t\t\"id\": \"360000199307127835\",\n\t\t\"name\": \"Barbara Lopez\"\n\t},\n\t{\n\t\t\"id\": \"150000197507091429\",\n\t\t\"name\": \"Larry Smith\"\n\t},\n\t{\n\t\t\"id\": \"530000197007011462\",\n\t\t\"name\": \"Kevin Wilson\"\n\t},\n\t{\n\t\t\"id\": \"620000199904241322\",\n\t\t\"name\": \"Mary Williams\"\n\t},\n\t{\n\t\t\"id\": \"500000201012056052\",\n\t\t\"name\": \"Donna Moore\"\n\t}\n]"
+            }
+          ]
+        },
+        {
+          "name": "CreateUerOK",
+          "request": {
+            "url": {
+              "raw": "http://{{host}}:{{port}}/api/users",
+              "protocol": "http",
+              "port": "{{port}}",
+              "host": [
+                "{{host}}"
+              ],
+              "path": [
+                "api",
+                "users"
+              ]
+            },
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{bearer_token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n\t\"name\": \"MagicCaptain\"\n}"
+            },
+            "method": "post"
+          },
+          "response": [
+            {
+              "name": "CreateUerOK",
+              "originalRequest": {
+                "url": {
+                  "raw": "http://{{host}}:{{port}}/api/users",
+                  "protocol": "http",
+                  "port": "{{port}}",
+                  "host": [
+                    "{{host}}"
+                  ],
+                  "path": [
+                    "api",
+                    "users"
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer {{bearer_token}}"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n\t\"name\": \"MagicCaptain\"\n}"
+                },
+                "method": "post"
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "49"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"31-7Y+9+uGcS2CxbZw0UMbocfEsM5Y\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Fri, 18 May 2018 14:39:17 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "cookies": [],
+              "body": "{\n\t\"name\": \"MagicCaptain\",\n\t\"id\": \"500000201609222615\"\n}"
+            }
+          ]
+        },
+        {
+          "name": "GetUserOK",
+          "request": {
+            "url": {
+              "raw": "http://{{host}}:{{port}}/api/users/500000201609222615",
+              "protocol": "http",
+              "port": "{{port}}",
+              "host": [
+                "{{host}}"
+              ],
+              "path": [
+                "api",
+                "users",
+                "500000201609222615"
+              ]
+            },
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{bearer_token}}"
+              }
+            ],
+            "body": {},
+            "method": "get"
+          },
+          "response": [
+            {
+              "name": "GetUserOK",
+              "originalRequest": {
+                "url": {
+                  "raw": "http://{{host}}:{{port}}/api/users/500000201609222615",
+                  "protocol": "http",
+                  "port": "{{port}}",
+                  "host": [
+                    "{{host}}"
+                  ],
+                  "path": [
+                    "api",
+                    "users",
+                    "500000201609222615"
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer {{bearer_token}}"
+                  }
+                ],
+                "body": {},
+                "method": "get"
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "49"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"31-7Y+9+uGcS2CxbZw0UMbocfEsM5Y\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Fri, 18 May 2018 14:39:17 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "cookies": [],
+              "body": "{\n\t\"name\": \"MagicCaptain\",\n\t\"id\": \"500000201609222615\"\n}"
+            }
+          ]
+        },
+        {
+          "name": "GetUserNotFound",
+          "request": {
+            "url": {
+              "raw": "http://{{host}}:{{port}}/api/users/fdfdfder3",
+              "protocol": "http",
+              "port": "{{port}}",
+              "host": [
+                "{{host}}"
+              ],
+              "path": [
+                "api",
+                "users",
+                "fdfdfder3"
+              ]
+            },
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{bearer_token}}"
+              }
+            ],
+            "body": {},
+            "method": "get"
+          },
+          "response": [
+            {
+              "name": "GetUserNotFound",
+              "originalRequest": {
+                "url": {
+                  "raw": "http://{{host}}:{{port}}/api/users/fdfdfder3",
+                  "protocol": "http",
+                  "port": "{{port}}",
+                  "host": [
+                    "{{host}}"
+                  ],
+                  "path": [
+                    "api",
+                    "users",
+                    "fdfdfder3"
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer {{bearer_token}}"
+                  }
+                ],
+                "body": {},
+                "method": "get"
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "46"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"2e-vo15a4dWa89qEG5eDgdYHD+Gh8k\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Fri, 18 May 2018 14:39:17 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "cookies": [],
+              "body": "{\n\t\"name\": \"NotFound\",\n\t\"message\": \"User not found\"\n}"
+            }
+          ]
+        },
+        {
+          "name": "UpdateUserOK",
+          "request": {
+            "url": {
+              "raw": "http://{{host}}:{{port}}/api/users/500000201609222615",
+              "protocol": "http",
+              "port": "{{port}}",
+              "host": [
+                "{{host}}"
+              ],
+              "path": [
+                "api",
+                "users",
+                "500000201609222615"
+              ]
+            },
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{bearer_token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n\t\"name\": \"CaptainMagic\"\n}"
+            },
+            "method": "put"
+          },
+          "response": [
+            {
+              "name": "UpdateUserOK",
+              "originalRequest": {
+                "url": {
+                  "raw": "http://{{host}}:{{port}}/api/users/500000201609222615",
+                  "protocol": "http",
+                  "port": "{{port}}",
+                  "host": [
+                    "{{host}}"
+                  ],
+                  "path": [
+                    "api",
+                    "users",
+                    "500000201609222615"
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer {{bearer_token}}"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n\t\"name\": \"CaptainMagic\"\n}"
+                },
+                "method": "put"
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "49"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"31-4IiK5GmEBALul+IF1SUeMJJF3n8\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Fri, 18 May 2018 14:39:17 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "cookies": [],
+              "body": "{\n\t\"name\": \"CaptainMagic\",\n\t\"id\": \"500000201609222615\"\n}"
+            }
+          ]
+        },
+        {
+          "name": "UpdateUserNotFound",
+          "request": {
+            "url": {
+              "raw": "http://{{host}}:{{port}}/api/users/dfdfdrt43",
+              "protocol": "http",
+              "port": "{{port}}",
+              "host": [
+                "{{host}}"
+              ],
+              "path": [
+                "api",
+                "users",
+                "dfdfdrt43"
+              ]
+            },
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{bearer_token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n\t\"name\": \"CaptainMagic\"\n}"
+            },
+            "method": "put"
+          },
+          "response": [
+            {
+              "name": "UpdateUserNotFound",
+              "originalRequest": {
+                "url": {
+                  "raw": "http://{{host}}:{{port}}/api/users/dfdfdrt43",
+                  "protocol": "http",
+                  "port": "{{port}}",
+                  "host": [
+                    "{{host}}"
+                  ],
+                  "path": [
+                    "api",
+                    "users",
+                    "dfdfdrt43"
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer {{bearer_token}}"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n\t\"name\": \"CaptainMagic\"\n}"
+                },
+                "method": "put"
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "46"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"2e-vo15a4dWa89qEG5eDgdYHD+Gh8k\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Fri, 18 May 2018 14:39:17 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "cookies": [],
+              "body": "{\n\t\"name\": \"NotFound\",\n\t\"message\": \"User not found\"\n}"
+            }
+          ]
+        },
+        {
+          "name": "DeleteUserOK",
+          "request": {
+            "url": {
+              "raw": "http://{{host}}:{{port}}/api/users/500000201609222615",
+              "protocol": "http",
+              "port": "{{port}}",
+              "host": [
+                "{{host}}"
+              ],
+              "path": [
+                "api",
+                "users",
+                "500000201609222615"
+              ]
+            },
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{bearer_token}}"
+              }
+            ],
+            "body": {},
+            "method": "delete"
+          },
+          "response": [
+            {
+              "name": "DeleteUserOK",
+              "originalRequest": {
+                "url": {
+                  "raw": "http://{{host}}:{{port}}/api/users/500000201609222615",
+                  "protocol": "http",
+                  "port": "{{port}}",
+                  "host": [
+                    "{{host}}"
+                  ],
+                  "path": [
+                    "api",
+                    "users",
+                    "500000201609222615"
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer {{bearer_token}}"
+                  }
+                ],
+                "body": {},
+                "method": "delete"
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Date",
+                  "value": "Fri, 18 May 2018 14:39:17 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "cookies": [],
+              "body": "{}"
+            }
+          ]
+        },
+        {
+          "name": "DeleteUserNotFound",
+          "request": {
+            "url": {
+              "raw": "http://{{host}}:{{port}}/api/users/dfdfdrt43",
+              "protocol": "http",
+              "port": "{{port}}",
+              "host": [
+                "{{host}}"
+              ],
+              "path": [
+                "api",
+                "users",
+                "dfdfdrt43"
+              ]
+            },
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{bearer_token}}"
+              }
+            ],
+            "body": {},
+            "method": "delete"
+          },
+          "response": [
+            {
+              "name": "DeleteUserNotFound",
+              "originalRequest": {
+                "url": {
+                  "raw": "http://{{host}}:{{port}}/api/users/dfdfdrt43",
+                  "protocol": "http",
+                  "port": "{{port}}",
+                  "host": [
+                    "{{host}}"
+                  ],
+                  "path": [
+                    "api",
+                    "users",
+                    "dfdfdrt43"
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer {{bearer_token}}"
+                  }
+                ],
+                "body": {},
+                "method": "delete"
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "46"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"2e-vo15a4dWa89qEG5eDgdYHD+Gh8k\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Fri, 18 May 2018 14:39:17 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "cookies": [],
+              "body": "{\n\t\"name\": \"NotFound\",\n\t\"message\": \"User not found\"\n}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

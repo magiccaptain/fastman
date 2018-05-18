@@ -1,0 +1,196 @@
+openapi: 3.0.1
+info:
+  title: 测试文档
+  description: 测试文档
+  version: 0.0.1
+servers:
+  - url: 'http://localhost:3000/api'
+    description: 测试api
+tags:
+  - name: User
+    description: 用户的Restful api
+paths:
+  /users:
+    get:
+      tags:
+        - User
+      summary: List users
+      description: 获取用户列表
+      operationId: listUsers
+      parameters:
+        - name: name
+          in: query
+          description: 用户名称
+          required: false
+          schema:
+            type: string
+            example: user1
+        - name: limit
+          in: query
+          description: 返回数量
+          required: false
+          schema:
+            type: integer
+            example: 10
+        - name: offset
+          in: query
+          description: 偏移量
+          required: false
+          schema:
+            type: integer
+            example: 0
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Total:
+              schema:
+                description: 当前查询包含的总数
+                type: integer
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/User'
+    post:
+      tags:
+        - User
+      summary: Create user
+      description: 新建用户
+      operationId: createUser
+      requestBody:
+        description: 用户
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+            examples:
+              newUser:
+                summary: 新建用户示例
+                value:
+                  name: New User
+        required: true
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+
+  /users/{userId}:
+    get:
+      tags:
+        - User
+      summary: Get user by id
+      description: 获取用户
+      operationId: getUserById
+      parameters:
+        - in: path
+          schema:
+            type: string
+          required: true
+          description: 用户id
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+        404:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+    put:
+      tags:
+        - User
+      summary: Update user by id
+      operationId: updateUserById
+      description: 更新用户
+      requestBody:
+        description: 用户
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+            examples:
+              newUser:
+                summary: 更新用户示例
+                value:
+                  name: Updated User
+      parameters:
+        - in: path
+          schema:
+            type: string
+          required: true
+          description: 用户id
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+        404:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+    delete:
+      tags:
+        - User
+      summary: Delete user
+      description: 删除用户
+      operationId: deleteUser
+      parameters:
+        - in: path
+          schema:
+            type: string
+          required: true
+          description: 用户id
+      responses:
+        204:
+          description: Delete Ok
+        404:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+components:
+  responses:
+    SingleUserResp:
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/User'
+
+    NotFound:
+      description: Not found
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+  schemas:
+    User:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+    Error:
+      type: object
+      properties:
+        name:
+          type: string
+        message:
+          type: string
+

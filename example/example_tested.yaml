@@ -1,0 +1,245 @@
+openapi: 3.0.1
+info:
+  title: 测试文档
+  description: 测试文档
+  version: 0.0.1
+servers:
+  - url: 'http://localhost:3000/api'
+    description: 测试api
+paths:
+  /users:
+    get:
+      tags:
+        - User
+      summary: List users
+      description: 获取用户列表
+      operationId: listUsers
+      parameters:
+        - name: name
+          in: query
+          description: 用户名称
+          required: false
+          schema:
+            type: string
+            example: user1
+        - name: limit
+          in: query
+          description: 返回数量
+          required: false
+          schema:
+            type: integer
+            example: 10
+        - name: offset
+          in: query
+          description: 偏移量
+          required: false
+          schema:
+            type: integer
+            example: 0
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Total:
+              schema:
+                description: 当前查询包含的总数
+                type: integer
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/User'
+              examples:
+                ListUserOK:
+                  value:
+                    - id: '340000199806176355'
+                      name: Brian Rodriguez
+                    - id: '610000200908238415'
+                      name: Margaret Clark
+                    - id: '140000197109234971'
+                      name: Jeffrey Walker
+                    - id: '520000199010315333'
+                      name: Jessica Clark
+                    - id: '220000197805212987'
+                      name: Jessica Jackson
+                    - id: '360000199307127835'
+                      name: Barbara Lopez
+                    - id: '150000197507091429'
+                      name: Larry Smith
+                    - id: '530000197007011462'
+                      name: Kevin Wilson
+                    - id: '620000199904241322'
+                      name: Mary Williams
+                    - id: '500000201012056052'
+                      name: Donna Moore
+    post:
+      tags:
+        - User
+      summary: Create user
+      description: 新建用户
+      operationId: createUser
+      requestBody:
+        description: 用户
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+            examples:
+              newUser:
+                summary: 新建用户示例
+                value:
+                  name: New User
+        required: true
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+              examples:
+                CreateUerOK:
+                  value:
+                    name: MagicCaptain
+                    id: '500000201609222615'
+  '/users/{userId}':
+    get:
+      tags:
+        - User
+      summary: Get user by id
+      description: 获取用户
+      operationId: getUserById
+      parameters:
+        - in: path
+          description: 用户id
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+              examples:
+                GetUserOK:
+                  value:
+                    name: MagicCaptain
+                    id: '500000201609222615'
+        '404':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                GetUserNotFound:
+                  value:
+                    name: NotFound
+                    message: User not found
+    put:
+      tags:
+        - User
+      summary: Update user by id
+      description: 更新用户
+      operationId: updateUserById
+      parameters:
+        - in: path
+          description: 用户id
+          required: true
+          schema:
+            type: string
+      requestBody:
+        description: 用户
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+            examples:
+              newUser:
+                summary: 更新用户示例
+                value:
+                  name: Updated User
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+              examples:
+                UpdateUserOK:
+                  value:
+                    name: CaptainMagic
+                    id: '500000201609222615'
+        '404':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                UpdateUserNotFound:
+                  value:
+                    name: NotFound
+                    message: User not found
+    delete:
+      tags:
+        - User
+      summary: Delete user
+      description: 删除用户
+      operationId: deleteUser
+      parameters:
+        - in: path
+          description: 用户id
+          required: true
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Delete Ok
+        '404':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                DeleteUserNotFound:
+                  value:
+                    name: NotFound
+                    message: User not found
+components:
+  schemas:
+    User:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+    Error:
+      type: object
+      properties:
+        name:
+          type: string
+        message:
+          type: string
+  responses:
+    SingleUserResp:
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/User'
+    NotFound:
+      description: Not found
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+tags:
+  - name: User
+    description: 用户的Restful api
